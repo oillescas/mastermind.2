@@ -1,7 +1,7 @@
 package mastermind.models;
 
 import mastermind.Error;
-import mastermind.views.Message;
+import mastermind.views.console.Message;
 import santaTecla.utils.Console;
 
 public class ProposedCombination extends Combination {

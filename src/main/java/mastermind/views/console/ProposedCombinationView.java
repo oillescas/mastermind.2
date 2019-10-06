@@ -1,4 +1,4 @@
-package mastermind.views;
+package mastermind.views.console;
 
 import mastermind.controllers.Controller;
 import mastermind.models.Color;

@@ -1,10 +1,10 @@
 package mastermind.views.console;
 
 import mastermind.controllers.Controller;
-import mastermind.views.Message;
-import mastermind.views.ProposedCombinationView;
-import mastermind.views.ResultView;
-import mastermind.views.SecretConbinationView;
+import mastermind.views.console.Message;
+import mastermind.views.console.ProposedCombinationView;
+import mastermind.views.console.ResultView;
+import mastermind.views.console.SecretConbinationView;
 import santaTecla.utils.WithConsoleModel;
 
 public class GameView  extends WithConsoleModel{
