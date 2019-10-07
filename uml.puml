@@ -1,0 +1,36 @@
+@startuml mastermind
+
+class mastermind.Mastermind
+mastermind.Mastermind *-down-> mastermind.controllers.Logic
+mastermind.Mastermind *-down-> mastermind.views.View
+
+interface mastermind.views.View
+mastermind.views.View ..> mastermind.controllers.Controller
+
+class mastermind.views.console.ConsoleView
+mastermind.views.View <|-down- mastermind.views.console.ConsoleView
+mastermind.views.console.ConsoleView *-down-> mastermind.views.console.GameView
+mastermind.views.console.GameView *-down-> mastermind.views.console.SecretCombinationView
+mastermind.views.console.GameView *-down-> mastermind.views.console.ProposedCombinationView
+mastermind.views.console.GameView *-down-> mastermind.views.console.ResultCombinationView
+
+class mastermind.controllers.Controller
+mastermind.controllers.Controller <|-down- mastermind.controllers.StartController
+mastermind.controllers.Controller <|-down- mastermind.controllers.ProposeController
+mastermind.controllers.Controller <|-down- mastermind.controllers.ResumeController
+
+class mastermind.controllers.Logic
+mastermind.controllers.Logic *-down-> mastermind.controllers.StartController
+mastermind.controllers.Logic *-down-> mastermind.controllers.ProposeController
+mastermind.controllers.Logic *-down-> mastermind.controllers.ResumeController
+mastermind.controllers.Logic *-down-> mastermind.models.Game
+mastermind.controllers.Logic *-down-> mastermind.models.State
+
+interface mastermind.controllers.ControllerVisitor
+
+mastermind.controllers.ControllerVisitor <|-down- mastermind.views.View
+mastermind.controllers.Controller ..> mastermind.controllers.ControllerVisitor
+
+mastermind.controllers.Controller --> mastermind.models.Game
+mastermind.controllers.Controller --> mastermind.models.State
+@enduml
